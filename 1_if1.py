@@ -14,12 +14,26 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def main(age_sent):
+    age_sent = int(age_sent)
+    if age_sent >= 1 and age_sent <= 6:
+        message = f'В возрасте = {age_sent} нужно ходить в сад'
+    elif age_sent >= 7 and age_sent <= 17:
+        message = f'В возрасте = {age_sent} нужно учиться в школе'
+    elif age_sent >= 18:
+        message = f'В возрасте = {age_sent} нужно учиться в ВУЗе, либо работать'
+    else:
+        message = 'Error!'
+    return message
+
+while True:
+    my_age = input('Введите целое число : ')
+    try:
+        my_age = int(my_age)
+        break
+    except ValueError:
+        print('Введено не целое число!')
+
 
 if __name__ == "__main__":
-    main()
+    print(main(my_age))
