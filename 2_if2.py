@@ -12,29 +12,22 @@
 * Если строки разные и вторая строка 'learn', возвращает 3
 * Вызвать функцию несколько раз, передавая ей разные праметры 
   и выводя на экран результаты
-
 """
-
-def main(first_line,second_line):
-    first_type = type(first_line)
-    second_type = type(second_line)
-    if first_type != str or second_type != str:
-        value = 0
-    else:
-        if first_line == second_line:
-            value = 1
-        else:
-            if len(first_line) > len(second_line):
-                value = 2
-            elif second_line == 'learn':
-                value = 3
-            else:
-                value = 'Не существует условий, при которых вторая строка длиннее первой!'
-    return value
-
-first_line = input('Введите первую строку : ')
-second_line = input( 'Введите вторую строку : ')
-
-
+def main():
+    """
+    Эта функция вызывается автоматически при запуске скрипта в консоли
+    В ней надо заменить pass на ваш код
+    """
+    first_line = input('Введите первую строку:\n')
+    second_line = input('Введите вторую строку:\n')
+    if type(first_line) != str or type(second_line) != str:
+        print ("0")
+    elif first_line == second_line:
+        print ("1")
+    elif len(first_line) > len(second_line):
+        print ("2")
+    elif first_line != second_line and second_line == 'learn':
+        print ("3")
+    
 if __name__ == "__main__":
-    print(main(first_line,second_line))
+    main()

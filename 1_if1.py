@@ -11,29 +11,29 @@
 * Вызвать функцию, передав ей возраст пользователя и положить результат 
   работы функции в переменную
 * Вывести содержимое переменной на экран
-
 """
 
-def main(age_sent):
-    age_sent = int(age_sent)
-    if age_sent >= 1 and age_sent <= 6:
-        message = f'В возрасте = {age_sent} нужно ходить в сад'
-    elif age_sent >= 7 and age_sent <= 17:
-        message = f'В возрасте = {age_sent} нужно учиться в школе'
-    elif age_sent >= 18:
-        message = f'В возрасте = {age_sent} нужно учиться в ВУЗе, либо работать'
-    else:
-        message = 'Error!'
-    return message
 
-while True:
-    my_age = input('Введите целое число : ')
+def main(age_user):
+    """
+    Эта функция вызывается автоматически при запуске скрипта в консоли
+    В ней надо заменить pass на ваш код
+    """
     try:
-        my_age = int(my_age)
-        break
+        age = int(age_user)
+        if age >= 1 and age <= 6:
+            print("В этом возрасте пользователь должен учиться в детском саду")
+        elif age >= 7 and age <= 18:
+            print("В этом возрасте пользователь должен учиться в школе")
+        elif age >= 19 and age <= 23:
+            print("В этом возрасте пользователь должен учиться в ВУЗе")
+        elif age > 23 and age <= 65:
+            print("В этом возрасте пользователь должен работать")
+        else:
+            print("Условие по данному возрасту не найдены!")
     except ValueError:
-        print('Введено не целое число!')
-
+        print("Задано некорректное значение")
+  
 
 if __name__ == "__main__":
-    print(main(my_age))
+    main(input('Введите возраст:\n'))

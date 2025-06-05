@@ -4,33 +4,28 @@
 
 Исключения: приведение типов
 
-* Перепишите функцию discounted(price, discount, max_discount=20)
-  из урока про функции так, чтобы она перехватывала исключения,
-  когда переданы некорректные аргументы.
-* Первые два нужно приводить к вещественному числу при помощи float(),
-  а третий - к целому при помощи int() и перехватывать исключения
-  ValueError и TypeError, если приведение типов не сработало.
-    
+* Напишите функцию get_summ(num_one, num_two), которая принимает 
+  на вход два целых числа (int), складывает их и возвращает результат 
+  сложения
+* Оба аргумента нужно приводить к целому числу при помощи int() и 
+  перехватывать исключение ValueError если приведение типов не сработало  
 """
 
-def discounted(price, discount, max_discount=20):
-    try:        
-      price = float(abs(price))
-      discount = float(abs(discount))
-      max_discount =int(abs(max_discount))
-      if max_discount >= 100:
-          raise ValueError('Слишком большая максимальная скидка')
-      if discount >= max_discount:
-          return price
-      else:
-          return price - (price * discount / 100)
+def get_summ(num_one, num_two):
+    """
+    Замените pass на ваш код
+    """
+    try:
+        num_one = int(num_one)
+        num_two = int(num_two)
+        return(f'Сумма числа {num_one} и {num_two} = {num_one + num_two}')
     except (ValueError,TypeError):
-        return('Задана некорректная переменная!')
+        return('Задано некорректное число')
+    
     
 if __name__ == "__main__":
-    print(discounted(100, 2))
-    print(discounted(100, "3"))
-    print(discounted("100", "4.5"))
-    print(discounted("five", 5))
-    print(discounted("сто", "десять"))
-    print(discounted(100.0, 5, "10"))
+    print(get_summ(2, 2))
+    print(get_summ(3, "3"))
+    print(get_summ("4", "4"))
+    print(get_summ("five", 5))
+    print(get_summ("six", "шесть"))
