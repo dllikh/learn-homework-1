@@ -12,15 +12,22 @@
 * Если строки разные и вторая строка 'learn', возвращает 3
 * Вызвать функцию несколько раз, передавая ей разные праметры 
   и выводя на экран результаты
-
 """
-
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    first_line = input('Введите первую строку:\n')
+    second_line = input('Введите вторую строку:\n')
+    if type(first_line) != str or type(second_line) != str:
+        print ("0")
+    elif first_line == second_line:
+        print ("1")
+    elif len(first_line) > len(second_line):
+        print ("2")
+    elif first_line != second_line and second_line == 'learn':
+        print ("3")
     
 if __name__ == "__main__":
     main()
