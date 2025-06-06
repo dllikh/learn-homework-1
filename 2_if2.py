@@ -18,16 +18,17 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    first_line = 'learn'
-    second_line = 23
+    first_line = 1
+    second_line = 'learn'
     if type(first_line) != str or type(second_line) != str:
-        print ("0")
+        num_response = 0
     elif first_line == second_line:
-        print ("1")
+        num_response = 1
     elif len(first_line) > len(second_line):
-        print ("2")
+        num_response = 2
     elif first_line != second_line and second_line == 'learn':
-        print ("3")
+        num_response = 3
+    return num_response
     
 if __name__ == "__main__":
-    main()
+    print(main())
