@@ -18,8 +18,8 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    first_line = input('Введите первую строку:\n')
-    second_line = input('Введите вторую строку:\n')
+    first_line = 'learn'
+    second_line = 23
     if type(first_line) != str or type(second_line) != str:
         print ("0")
     elif first_line == second_line:
