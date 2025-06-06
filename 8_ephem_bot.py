@@ -40,16 +40,16 @@ def planet_user(update, context):
     update.message.reply_text('Выберите планету', reply_markup = view_keyboard)
 
 def key_reply(update, context):
-    user_messg = update.message.text.lower()
-    if user_messg == 'закрыть список':
+    user_msg = update.message.text.lower()
+    if user_msg == 'закрыть список':
         update.message.reply_text('Список закрыт', reply_markup=ReplyKeyboardRemove())
         return
     
-    elif user_messg in planets:
-        planet = planets[user_messg]
+    elif user_msg in planets:
+        planet = planets[user_msg]
         planet.compute(current_date)
         constellation = ephem.constellation(planet)[1]
-        update.message.reply_text(f'Планета {user_messg.capitalize()} на момент {current_date} находится в созвездии {constellation}')
+        update.message.reply_text(f'Планета {user_msg.capitalize()} на момент {current_date} находится в созвездии {constellation}')
     else:
         update.message.reply_text('Планета не найдена')
 

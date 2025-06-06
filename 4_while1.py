@@ -14,9 +14,9 @@ def ask_user():
     Замените pass на ваш код
     """
 
-    user_mess = input('Как дела?\n')
-    while user_mess != 'Хорошо':
-        user_mess = input('Как дела?\n')
+    user_msg = ''
+    while user_msg.strip().upper() != 'ХОРОШО':
+        user_msg = input('Как дела?\n')
     print('Цикл завершен')
 
    

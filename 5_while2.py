@@ -18,17 +18,13 @@ def ask_user():
     Замените pass на ваш код
     """
     dictionary_list = {"Как дела": "Хорошо!", "Что делаешь?": "Программирую"}
-    user_mess = ''
-    while user_mess != 'Закончить':
-        user_mess = input('Задайте вопрос\n')
-        if user_mess in dictionary_list:
-            print(dictionary_list[user_mess])
-            user_mess = input('Задайте вопрос, либо введите "Закончить"\n')
-        else:
-            user_mess = input('Задайте вопрос, либо введите "Закончить"\n')
+    user_msg = ''
+    while user_msg.strip().lower() != 'закончить':
+        user_msg = input('Задайте вопрос\n').lower()
+        if user_msg in dictionary_list:
+            print(dictionary_list[user_msg])
+            user_msg = input('Задайте вопрос, либо введите "Закончить"\n')
 
-
-        
     
 if __name__ == "__main__":
     ask_user()
